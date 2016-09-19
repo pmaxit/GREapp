@@ -9,22 +9,25 @@ var deviceHeight = Dimensions.get('window').height;
 
 module.exports = StyleSheet.create({
     container: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        backgroundColor: '#453F41'
+        
+        backgroundColor: '#453F41',
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'stretch'
     },
     shadow: {
-        flex: 1,
+        flex: 10,
         width: null,
         height: null,
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        resizeMode: 'contain',
+        
+        marginTop: deviceHeight/5.75
     },
     bg: {
         flex: 1,
-        marginTop: deviceHeight/1.75,
+        marginTop: deviceHeight/4.75,
         backgroundColor: '#453F41',
         paddingTop: 20,
         paddingLeft: 10,

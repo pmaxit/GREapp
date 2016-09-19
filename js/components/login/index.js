@@ -39,7 +39,7 @@ class Login extends Component {
             <Container theme={myTheme}>
                 <View style={styles.container}>
                     <Content>
-                        <Image source={require('../../../images/shadow.png')} style={styles.shadow}>
+                            <Image source={require('../../../images/logoweb.png')} style={styles.shadow}/>
                             <View style={styles.bg}>
                                 <InputGroup style={styles.input}>
                                     <Icon name='ios-person' />
@@ -56,7 +56,7 @@ class Login extends Component {
                                     Login
                                 </Button>
                             </View>
-                        </Image>
+                        
                     </Content>
                 </View>
             </Container>

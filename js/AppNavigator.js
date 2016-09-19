@@ -15,6 +15,8 @@ import Home from './components/home/';
 import BlankPage from './components/blankPage/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
+import MainScreen from './components/mainscreen'
+
 import { statusBarColor } from "./themes/base-theme";
 
 Navigator.prototype.replaceWithAnimation = function (route) {
@@ -125,7 +127,7 @@ class AppNavigator extends Component {
                     configureScene={(route) => {
                         return Navigator.SceneConfigs.FloatFromRight;
                     }}
-                    initialRoute={{id: (Platform.OS === "android") ? 'splashscreen' : 'login', statusBarHidden: true}}
+                    initialRoute={{id: 'splashscreen', statusBarHidden: true}}
                     renderScene={this.renderScene}
                   />
             </Drawer>
@@ -142,6 +144,8 @@ class AppNavigator extends Component {
                 return <Home navigator={navigator} />;
             case 'blankPage':
                 return <BlankPage navigator={navigator} />;
+            case 'mainscreen':
+                return <MainScreen navigator={navigator} />;
             default :
                 return <Login navigator={navigator}  />;
         }
