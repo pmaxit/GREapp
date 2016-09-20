@@ -15,7 +15,7 @@ export default class SplashPage extends Component {
         var navigator = this.props.navigator;
         setTimeout (() => {
             navigator.replace({
-                id: 'mainscreen',
+                id: 'login',
             });
         }, 1500);
     }
