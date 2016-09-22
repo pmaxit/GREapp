@@ -1,24 +1,36 @@
 
 'use strict';
 
-import type {Action} from '../actions/types';
-import { SET_INDEX } from '../actions/list';
+import { SET_INDEX, SET_DATA, SET_LIMIT, INCREASE_LIMIT } from '../actions/list';
 
-export type State = {
-    list: string
+// load the data from json document.
+
+const initialState= {
+    data : null,
+    initialListSize: 10,
+    scrollRenderAheadDistance: 1,
+    removeClippedSubViews: true,
+    limit: 1
 }
 
-const initialState = {
-    list: ['React Native starter kit', 'RN Navigator', 'NB Easy Grid', 'NativeBase', 'CodePush', 'Redux'],
-    selectedIndex: undefined
-};
+export default function (state = initialState, action) {
+    
+    switch(action.type){
+    	case SET_INDEX:
+    	case SET_DATA:
+    	case SET_LIMIT:
+    		return{
+    			...state,
+    			...action.payload
+    		}
+        case INCREASE_LIMIT:
+            return{
+                ...state,
+                limit: action.payload.incr + state.limit
+            }
+    	default:
+    		return state;
+    	}
 
-export default function (state:State = initialState, action:Action): State {
-    if (action.type === SET_INDEX) {
-        return {
-            ...state,
-            selectedIndex: action.payload
-        };
+    	return state;
     }
-    return state;
-}

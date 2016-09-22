@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { DeviceEventEmitter, Dimensions, Image } from 'react-native';
 import { connect } from 'react-redux';
 
-import { replaceRoute } from '../../actions/route';
+import { replaceRoute, pushNewRoute } from '../../actions/route';
 import { setUser } from '../../actions/user';
 
 import { Container, Content, InputGroup, Input, Button, Icon, View } from 'native-base';
@@ -24,9 +24,9 @@ class Login extends Component {
         };
     }
 
-    replaceRoute(route) {
+    pushNewRoute(route) {
         this.setUser(this.state.name);
-        this.props.replaceRoute(route);
+        this.props.pushNewRoute(route);
     }
 
     setUser(name) {
@@ -52,7 +52,7 @@ class Login extends Component {
                                         secureTextEntry={true}
                                     />
                                 </InputGroup>
-                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.replaceRoute('home') }>
+                                <Button style={styles.btn} textStyle={{color: '#fff'}} onPress={() => this.pushNewRoute('mainscreen') }>
                                     Login
                                 </Button>
                             </View>
@@ -67,6 +67,7 @@ class Login extends Component {
 function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
+        pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
         setUser:(name)=>dispatch(setUser(name))
     }
 }

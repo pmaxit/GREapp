@@ -15,6 +15,7 @@ import Home from './components/home/';
 import BlankPage from './components/blankPage/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
+import MainScreen from './components/mainscreen'
 import { statusBarColor } from "./themes/base-theme";
 
 Navigator.prototype.replaceWithAnimation = function (route) {
@@ -142,6 +143,8 @@ class AppNavigator extends Component {
                 return <Home navigator={navigator} />;
             case 'blankPage':
                 return <BlankPage navigator={navigator} />;
+            case 'mainscreen':
+                return <MainScreen navigator={navigator} />;
             default :
                 return <Login navigator={navigator}  />;
         }

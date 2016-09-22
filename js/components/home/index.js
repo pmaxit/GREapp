@@ -30,6 +30,7 @@ class Home extends Component {
     }
 
     render() {
+        const data = ['a','b','c','d']
         return (
             <Container theme={myTheme}style={{backgroundColor: '#565051'}}>
                 <Header>
@@ -46,7 +47,7 @@ class Home extends Component {
 
                 <Content>
                     <Grid style={{marginTop: 20}}>
-                        {this.props.list.map((item, i) =>
+                        {data.map((item, i) =>
                             <Row key={i}>
                                 <TouchableOpacity style={styles.row} onPress={() => this.navigateTo('blankPage', i)} >
                                     <Text style={styles.text}>
@@ -77,7 +78,7 @@ function bindAction(dispatch) {
 function mapStateToProps(state) {
     return {
         name: state.user.name,
-        list: state.list.list
+        
     };
 }
 
