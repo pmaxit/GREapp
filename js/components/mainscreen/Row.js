@@ -29,8 +29,12 @@ export default class Row extends React.Component{
 		Animated.spring(
 			this.state.animation,
 			{
+<<<<<<< HEAD
 				toValue: finalValue,
 				friction: 4,
+=======
+				toValue: finalValue
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
 			}).start();
 	}
 	
@@ -60,7 +64,11 @@ export default class Row extends React.Component{
                 				{this.props.children}
                 			</View>);
 		return(
+<<<<<<< HEAD
 			<ListItem iconRight button onPress={this.toggle.bind(this)} style={{overflow:"hidden"}}>
+=======
+			<ListItem iconRight button onPress={this.toggle.bind(this)}>
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
 
   					<Icon name={icon} size={30} color="#4F8EF7"/>
 

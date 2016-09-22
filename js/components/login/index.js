@@ -24,8 +24,13 @@ class Login extends Component {
         };
     }
 
+<<<<<<< HEAD
     pushNewRoute(route) {
         this.setUser(this.state.name);
+=======
+    pushNewRoute(route){
+        //this.setUser(this.state.name);
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
         this.props.pushNewRoute(route);
     }
 
@@ -39,7 +44,7 @@ class Login extends Component {
             <Container theme={myTheme}>
                 <View style={styles.container}>
                     <Content>
-                        <Image source={require('../../../images/shadow.png')} style={styles.shadow}>
+                            <Image source={require('../../../images/logoweb.png')} style={styles.shadow}/>
                             <View style={styles.bg}>
                                 <InputGroup style={styles.input}>
                                     <Icon name='ios-person' />
@@ -56,7 +61,7 @@ class Login extends Component {
                                     Login
                                 </Button>
                             </View>
-                        </Image>
+                        
                     </Content>
                 </View>
             </Container>
@@ -67,7 +72,11 @@ class Login extends Component {
 function bindActions(dispatch){
     return {
         replaceRoute:(route)=>dispatch(replaceRoute(route)),
+<<<<<<< HEAD
         pushNewRoute:(route)=>dispatch(pushNewRoute(route)),
+=======
+        pushNewRoute:(route) => dispatch(pushNewRoute(route)),
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
         setUser:(name)=>dispatch(setUser(name))
     }
 }

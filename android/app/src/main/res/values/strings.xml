@@ -1,6 +1,9 @@
 <resources>
 
+<<<<<<< HEAD
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
+=======
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
     <string name="app_name">NativeStarterKit</string>
 </resources>

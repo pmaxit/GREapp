@@ -5,6 +5,7 @@ import type {Action} from './types';
 
 export const SET_INDEX = "SET_INDEX";
 export const SET_LIMIT = "SET_LIMIT";
+<<<<<<< HEAD
 export const SET_DATA  = "SET_DATA";
 export const INCREASE_LIMIT = "INCREASE_LIMIT";
 export const PUSH_ITEM = "PUSH_ITEM"
@@ -83,4 +84,23 @@ export function pushItem(text){
 		type: PUSH_ITEM,
 		payload:text
 	}
+=======
+
+export function setIndex(index:number):Action {
+    return {
+        type: SET_INDEX,
+        payload: {
+        	index: index
+        }
+    }
+}
+
+export function setLimit(limit:number){
+	return{
+		type: SET_LIMIT,
+		payload: {
+			limit:limit
+		}
+	}
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
 }

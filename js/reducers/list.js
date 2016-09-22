@@ -1,6 +1,7 @@
 
 'use strict';
 
+<<<<<<< HEAD
 import { SET_INDEX, SET_DATA, SET_LIMIT, INCREASE_LIMIT } from '../actions/list';
 
 // load the data from json document.
@@ -34,3 +35,24 @@ export default function (state = initialState, action) {
 
     	return state;
     }
+=======
+import { SET_INDEX, SET_LIMIT} from '../actions/list';
+
+// load the data from json document.
+
+const initialState= {
+    data : require("../data/dict.json"),
+    initialListSize: 3,
+    scrollRenderAheadDistance: 4,
+    removeClippedSubViews: true,
+    limit: 10
+}
+
+export default function (state = initialState, action) {
+    
+    return {
+        ...state,
+        ...action.payload
+    };
+}
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63

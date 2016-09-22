@@ -7,22 +7,30 @@ import { connect } from 'react-redux';
 import styles from './styles'
 
 import Row from './Row'
+<<<<<<< HEAD
 import GiftedListView from 'react-native-gifted-listview';
+=======
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
 
 export default class CardList extends React.Component{
 
 	_renderRow(item, sectionId){
+<<<<<<< HEAD
 		
 		
 		const {list} = this.props;
 
 		
+=======
+		const {list} = this.props;
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
   		return(   	
   			<Row item={item}> 
   				<Text style={styles.content}> {list.data[item]} </Text>
   			</Row>
   			);
     }
+<<<<<<< HEAD
    	
    	_onFetch(page = 1, callback, options) {
    		const { data, limit} = this.props.list;
@@ -50,6 +58,31 @@ export default class CardList extends React.Component{
           enableEmptySections={true}
           refreshableTintColor="blue"
         />
+=======
+   
+
+	render(){
+		
+		const {	data, initialListSize, 
+				scrollRenderAheadDistance, 
+				removeClippedSubViews,
+				limit
+			} = this.props.list;
+
+		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+		const dataSource = ds.cloneWithRows(Object.keys(data).slice(1,limit))
+
+		return(
+			
+			<List>
+				 <ListView dataSource={dataSource}
+				 	renderRow={this._renderRow.bind(this)} 
+				 	initialListSize={initialListSize}
+				 	scrollRenderAheadDistance={scrollRenderAheadDistance}
+				 	removeClippedSubViews={removeClippedSubViews}
+				 	/>
+            </List>
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
 			);
 	}
 }

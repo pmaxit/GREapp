@@ -126,6 +126,11 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
+=======
+    compile project(':@remobile/react-native-splashscreen')
+    compile project(':react-native-code-push')
+>>>>>>> c5b126c7dc30437bc787dca7335d35e5af3d6f63
     compile project(':react-native-vector-icons')
     compile project(':react-native-code-push')
     compile fileTree(dir: "libs", include: ["*.jar"])
